@@ -7,7 +7,79 @@
    NAVBAR / HEADER
    ===================================================== */
 
-.navbar {
+.navbar {/* Variables de diseño */
+:root {
+    --bg-color: #FFF7ED;
+    --mate-color: #4A90E2;
+    --bio-color: #50C878;
+    --eng-color: #F1C40F;
+}
+
+body {
+    background-color: var(--bg-color);
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+}
+
+.dashboard-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+h1 { margin-bottom: 30px; color: #333; }
+
+.materias-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: transform 0.2s, border-top 0.2s;
+    border-top: 6px solid #ccc;
+    text-align: center;
+}
+
+/* Colores únicos por materia */
+#mate { border-top-color: var(--mate-color); }
+#bio { border-top-color: var(--bio-color); }
+#eng { border-top-color: var(--eng-color); }
+
+.card:hover { transform: translateY(-8px); }
+
+.progress-bar {
+    height: 10px;
+    background: #eee;
+    border-radius: 5px;
+    margin: 20px 0;
+    overflow: hidden;
+}
+
+.progress-bar div {
+    height: 100%;
+    background: var(--color-primary);
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background: var(--color-primary);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .materias-grid { grid-template-columns: 1fr; }
+}
     background: linear-gradient(135deg, #FF8C42 0%, #E67E22 100%);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     position: sticky;
