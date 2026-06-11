@@ -5,7 +5,7 @@
 En **pgAdmin**:
 - Click derecho en base de datos `LynkoReto` → `Query Tool`
 - Pega contenido de `create_users_table.sql`
-- Ejecuta (Ctrl+Enter)
+
 
 ## 2️⃣ Instalar dependencias Python (2 min)
 
@@ -56,6 +56,9 @@ FOR EACH ROW
 EXECUTE FUNCTION update_updated_at();
 
 ## 4️⃣ Ejecutar servidor FastAPI (1 min)
+
+cd C:\Users\SENA\Lynko-Reto\Features-og\Src\Config
+
 
 ```bash
 python main.py
