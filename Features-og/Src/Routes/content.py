@@ -21,9 +21,6 @@ router = APIRouter(
     tags=["contenido"]
 )
 
-# =====================================================
-# FUNCIÓN AUXILIAR
-# =====================================================
 
 def get_db():
     db = SessionLocal()
@@ -32,9 +29,6 @@ def get_db():
     finally:
         db.close()
 
-# =====================================================
-# ENDPOINT 1: OBTENER TODAS LAS MATERIAS
-# =====================================================
 
 @router.get("/materias")
 async def obtener_materias(db: Session = Depends(get_db)):
@@ -78,9 +72,7 @@ async def obtener_materias(db: Session = Depends(get_db)):
             detail=f"Error: {str(e)}"
         )
 
-# =====================================================
-# ENDPOINT 2: OBTENER UNA MATERIA ESPECÍFICA
-# =====================================================
+
 
 @router.get("/materias/{id_materia}")
 async def obtener_materia(id_materia: int, db: Session = Depends(get_db)):
@@ -115,9 +107,7 @@ async def obtener_materia(id_materia: int, db: Session = Depends(get_db)):
             detail=f"Error: {str(e)}"
         )
 
-# =====================================================
-# ENDPOINT 3: OBTENER PREGUNTAS DE UNA MATERIA
-# =====================================================
+
 
 @router.get("/materias/{id_materia}/preguntas")
 async def obtener_preguntas_materia(
@@ -186,9 +176,6 @@ async def obtener_preguntas_materia(
             detail=f"Error: {str(e)}"
         )
 
-# =====================================================
-# ENDPOINT 4: GUARDAR RESPUESTA DEL USUARIO
-# =====================================================
 
 @router.post("/responder")
 async def guardar_respuesta(
@@ -273,9 +260,6 @@ async def guardar_respuesta(
             detail=f"Error: {str(e)}"
         )
 
-# =====================================================
-# ENDPOINT 5: OBTENER ESTADÍSTICAS DEL USUARIO
-# =====================================================
 
 @router.get("/usuario/{usuario_id}/estadisticas")
 async def obtener_estadisticas(
@@ -338,9 +322,6 @@ async def obtener_estadisticas(
             detail=f"Error: {str(e)}"
         )
 
-# =====================================================
-# ENDPOINT 6: OBTENER PROGRESO POR MATERIA
-# =====================================================
 
 @router.get("/usuario/{usuario_id}/progreso/{id_materia}")
 async def obtener_progreso_materia(
